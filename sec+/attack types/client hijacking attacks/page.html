@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Client Hijacking Attacks</title>
+</head><body><span style="background-color: #00007f">URL Hijacking<br/>
+</span>- url hijacking<br/>
+&#09;- <u>process in which a website is falsely removed from the results of a search engine and replaced by another web page that links to the remote page</u><span style="background-color: #00007f"><br/>
+</span><br/>
+- <u>attackers make money from your mistakes</u><br/>
+&#09;- theres a lot of advertising on the net<br/>
+<br/>
+- <u>sell the badly spelled domain name to the owner of the correctly spelled domain name</u><br/>
+<br/>
+- redirect to a competitor<br/>
+&#09;- not as common, legal issues<br/>
+<br/>
+- phishing site<br/>
+&#09;- looks like the real site, please log in<br/>
+<br/>
+- infect with a drive-by download<br/>
+&#09;- now you are infected with malware<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Types of URL Hijacking</span><br/>
+- typosquatting/brandjacking<br/>
+&#09;- takes advantage of poor spelling<br/>
+&#09;- <u>an attacker creates websites with characters transposed to redirect a user's session to a fraudulent website</u><br/>
+<br/>
+- outright misspelling<br/>
+&#09;- purposely misspelling<br/>
+<br/>
+- typing errors<br/>
+- a different phrase<br/>
+- different top level domain<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Clickjacking</span><br/>
+- you're clicking on a button<br/>
+&#09;- but you're actually clicking something else<br/>
+<br/>
+- normal web page underneath<br/>
+&#09;- invisible layer on top that accepts the click<br/>
+<br/>
+- <u>a malicious technique for tricking a web user into clicking on an icon or link</u><br/>
+&#09;- <u>the output will be different from what the user perceives they are clicking on</u><br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Browser Cookies and Session IDs</span><br/>
+- <u>cookies: information stored on your computer by the browser</u><br/>
+<br/>
+- <u>used for tracking, personalization, session management</u><br/>
+&#09;- not executable, not generally a security risk<br/>
+&#09;&#09;- unless someone gets access to them<br/>
+<br/>
+- Could be considered a privacy risk<br/>
+&#09;- lots of personal data in there<br/>
+<br/>
+- <u>Session IDs are often stored in the cookie</u><br/>
+&#09;- <u>maintains sessions across multiple browser sessions</u><br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Session Hijacking</span><br/>
+- <u>gain access to a service without authenticating</u><br/>
+&#09;- attacker captures session ID and makes requests as the user<br/>
+&#09;- <u>your computer can store your browsing information in a cookie</u><br/>
+&#09;- <u>someone can copy your cookie and gain access to your information</u><br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Header Manipulation</span><br/>
+- information gathering<br/>
+&#09;- wireshark, kismet<br/>
+<br/>
+- exploits<br/>
+&#09;- cross-site scripting<br/>
+<br/>
+- modify headers in requests<br/>
+&#09;- tamper, firesheep, scapy<br/>
+<br/>
+- modify cookies<br/>
+&#09;- cookies manager+ (firefox add-on)<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Prevent Session Hijacking</span><br/>
+- <u>encrypt end to end</u><br/>
+&#09;- they can't capture your session id if they can't see it<br/>
+&#09;- additional load on the web server (https)<br/>
+&#09;- firefox extension: HTTPS everywhere, force TLS<br/>
+&#09;&#09;- forces browser to use https<br/>
+&#09;- many sites are moving to https only<br/>
+<br/>
+- encrypt end to somewhere<br/>
+&#09;- at least avoid capture over a local wireless network<br/>
+&#09;- still in the clear for part of the journey<br/>
+&#09;- <u>use a personal VPN (OpenVPN, VyprVPN, etc.)</u><br/>
+<br/>
+- use session ID monitors<br/>
+&#09;- blacksheep, application specific monitors<br/>
+<br/>
+<br/>
+&#09;</body></html>

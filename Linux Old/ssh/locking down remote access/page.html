@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Locking Down Remote Access</title>
+</head><body>- prevent all remote logins for the root account<ul><li style="list-style-type: none">- sudo vipw</li>
+<li style="list-style-type: none">&#09;- opens /etc/passwd</li>
+<li style="list-style-type: none">&#09;- change: /root:/bin/bash to /root:/sbin/nologin</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none">- prevents remote logins to the root account</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br/>
+- only allow specified account to log in via ssh<br/>
+&#09;- edit /etc/ssh/sshd_config<br/>
+&#09;&#09;- add line:<br/>
+&#09;&#09;&#09;- AllowUsers [username]@[ip address]<br/>
+&#09;&#09;&#09;&#09;- will only allow listed users to ssh to this machine<br/>
+<br/>
+- restart ssh service<br/>
+<br/>
+&#09;</body></html>

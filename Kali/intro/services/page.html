@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Services</title>
+</head><body>Starting and Stopping a Service<br/>
+- apt-get install apache2<br/>
+- systemctl start apache2<br/>
+- systemctl status apache2<br/>
+- systemctl stop apache2<br/>
+- systemctl restart apache2<br/>
+<br/>
+Viewing Logs<br/>
+- cat /var/log/[log file]<br/>
+- tail -f /var/log/[log file]<br/>
+&#09;- updates to file are shown in realtime<br/>
+<br/>
+<br/>
+Sending a Process to the Background<br/>
+- vim test1 &amp;<br/>
+&#09;- runs process in the background<br/>
+<br/>
+- jobs<br/>
+&#09;- view active jobs in back and foreground<br/>
+<br/>
+- fg %[job id]<br/>
+&#09;- brings job to foreground<br/>
+<br/>
+<br/>
+List All Running Processes<br/>
+- ps aux<br/>
+- listing specific processes<br/>
+&#09;- ps aux | grep -i apache<br/>
+<br/>
+-monitoring processses live<br/>
+&#09;- htop<br/>
+<br/>
+Killing a Process<br/>
+- kill [process id]<br/>
+<br/>
+<br/>
+</body></html>

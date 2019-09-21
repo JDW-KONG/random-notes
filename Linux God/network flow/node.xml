@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>Network Flow</string>
+  <key>nodeid</key><string>7d3526f8-87c1-46f5-9151-e6999e926024</string>
+  <key>modified_time</key><integer>1565921228</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>application/x-notebook-dir</string>
+  <key>created_time</key><integer>1565921228</integer>
+  <key>order</key><integer>1</integer>
+</dict>
+</node>

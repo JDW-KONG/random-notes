@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Locating Network Info</title>
+</head><body><tt>Locating Network Info<br/>
+<br/>
+- check to see if Network Manager is running<br/>
+&#09;- systemctl status NetworkManager<br/>
+<br/>
+- get a list of active connections<br/>
+&#09;- nmcli c show<br/>
+&#09;- the higlighted entries are active<br/>
+<br/>
+- gathering info<br/>
+&#09;- nmcli d show [interface]<br/>
+&#09;- returns: ip address, netmask, gateway address, dns server, and dns domain</tt></body></html>

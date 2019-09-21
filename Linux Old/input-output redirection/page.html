@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Input/Output Redirection</title>
+</head><body>Three Things to Remember<br/>
+- stdin is the keyboard<br/>
+- stdout is the screen<br/>
+- stderr is reserved for error outputs<br/>
+<br/>
+- the most common use of output redirection is collecting the output oof a command into a file<br/>
+<br/>
+- ls -al &gt; listing<br/>
+&#09;- stores output from ls in listing<br/>
+&#09;- use &gt;&gt; to append<br/>
+<br/>
+- input redirection<ul><li style="list-style-type: none">- redirect where your system is getting input from</li>
+<li style="list-style-type: none">- use the sort command </li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- sort &lt; listing</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- passes listing file into sort command</li>
+</ul>
+</li>
+<li style="list-style-type: none">- sort &lt; listing &gt; sorted_list</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- stores the output of sort in sorted_list</li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+- pipes are used to take the output of one command and feed it into another<br/>
+&#09;- give any command scrolling output by piping it through less<br/>
+<br/>
+- we can also redirect errors<ul><li style="list-style-type: none">- myscript.sh 2&gt; errors</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- the 2 tells it to redirect stderr instead of stdout</li>
+<li style="list-style-type: none">- normal output will still be displayed on the screen</li>
+<li style="list-style-type: none">- errors will be written to a file named errors</li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+<li style="list-style-type: none">- myscript.sh &gt; allout.txt 2&gt;&amp;1</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- redirects all output and errors to a file</li>
+<li style="list-style-type: none">- prints all errors to stdout</li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+</ul>
+<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"></li>
+</ul>
+</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+&nbsp;<br/>
+<br/>
+</body></html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SCP</title>
+</head><body>- allows us to copy files over ssh connections<br/>
+- cannot be used to run commands on the remote server<br/>
+<br/>
+- uses and is very similar to ssh<br/>
+<br/>
+- three uses:<br/>
+&#09;- copy from remote to local<br/>
+&#09;- copy from local to remote<br/>
+&#09;- copy from remote to remote<br/>
+<br/>
+- scp [file] user@server:/home/user<br/>
+&#09;- transfers file to the listed directory<br/>
+<br/>
+- scp user@server:/home/[file] [local directory]<ul><li style="list-style-type: none">- copies file from remote to specified local directory</li>
+<li style="list-style-type: none"></li>
+</ul>
+- scp user@server:/home/user/[file] user2@server:/home/user2/<ul><li style="list-style-type: none">- copies files between remote hosts</li>
+<li style="list-style-type: none"></li>
+</ul>
+- P: specifies port<br/>
+<br/>
+</body></html>

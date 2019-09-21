@@ -1,0 +1,211 @@
+#!/bin/more
+=====================================================
+SCRIPT NAME: checkargs2.sh 
+=====================================================
+#!/bin/bash
+
+: ${3?"USAGE: $1 ARGUMENT $2 ARGUMENT $3 ARGUMENT"}
+
+echo "I got all three."
+=====================================================
+SCRIPT NAME: checkargs.sh 
+=====================================================
+#!/bin/bash
+# checks number of cmd line args
+
+if [ "$#" != "3" ]; then
+		echo "USAGE: checkargs.sh [param1] [param2] [param3]"
+		exit 300
+fi
+
+echo "I live, I got what I needed."
+=====================================================
+SCRIPT NAME: makedoc.sh 
+=====================================================
+#!/bin/bash
+# reads all of the files of a particular type and pipes to another file
+
+DOCFILE="script_listing"
+
+echo "#!/bin/more" > "$DOCFILE"
+
+ls *.sh > tmplisting.txt
+
+while IFS= read -r FILENAME; do
+		if [ -f "$FILENAME" ]; then
+				echo "=====================================================" >> "$DOCFILE"
+				echo "SCRIPT NAME: $FILENAME " >> "$DOCFILE"
+				echo "=====================================================" >> "$DOCFILE"
+				echo " "
+				echo "`cat $FILENAME`" >> "$DOCFILE"
+		fi
+done < tmplisting.txt
+
+chmod 755 "$DOCFILE"
+
+rm tmplisting.txt
+=====================================================
+SCRIPT NAME: overide.sh 
+=====================================================
+#!/bin/bash
+# override/trap the system exit and execute a custom function
+
+# global variables
+TMPFILE="tmpfile.txt"
+TMPFILE2="tmpfile2.txt"
+
+trap 'funcMyExit' EXIT
+# function declarations - start
+# run this exit instead of the default exit when called
+funcMyExit () {
+		echo "Exit Intercepted..."
+		echo "Cleaning up the temp files..."
+		rm -rf tmpfil*.txt
+		exit 255
+}
+# function declarations - stop
+
+
+# script - start
+echo "Write something to tmp file for later use..." > $TMPFILE
+echo "Write something to tmp file 2 for later use..." > $TMPFILE2
+
+echo "Trying to copy indicated file before processing..."
+cp -rf $1 newfile.txt 2>/dev/null
+
+if [ "$?" -eq "0" ]; then
+		echo "Everything worked out OK..."
+else
+		echo "I guess it did not work out OK..."
+		exit 1
+fi
+# script - stop
+=====================================================
+SCRIPT NAME: simpledialog.sh 
+=====================================================
+#!/bin/bash
+# demo of a dialog box that will display a menu
+
+# global variables / defaults
+MENUBOX=${MENUBOX=dialog}
+
+# function declarations - start
+funcDisplayDialogMenu () {
+		$MENUBOX --title "[ M A I N  M E N U ]" --menu "Use UP/DOWN arrows to move and select or the number of your choice and enter" 15 45 4 1 "Display Hello World" 2 "Display Goodbye World" 3 "Display Nothing" X "Exit" 2>choice.txt
+}
+
+# function declarations - stop
+
+# script start
+funcDisplayDialogMenu
+
+case "`cat choice.txt`" in 
+		1) echo "Hello World";;
+		2) echo "Goodbye World";;
+		3) echo "Nothing";;
+		X) echo "Exit";;
+esac
+
+# script - stop
+=====================================================
+SCRIPT NAME: simpleinfobox.sh 
+=====================================================
+#!/bin/bash
+# simple dialog box with ncurses
+
+# global variables / default values
+INFOBOX=${INFOBOX=dialog}
+TITLE="Default"
+MESSAGE="Something to say"
+XCORD=10
+YCORD=20
+
+
+# function declarations
+
+# display the infobox and our message
+funcDisplayInfoBox () {
+		$INFOBOX --title "$1" --infobox "$2" "$3" "$4"
+		sleep "$5"
+}
+
+# function declarations stop
+
+
+# script - start
+
+if [ "$1" = "shutdown" ]; then
+		funcDisplayInfoBox "WARNING" "We are SHUTTING DOWN the system..." "11" "21" "5"
+		echo "Shutting Down!"
+else
+		funcDisplayInfoBox "Information..." "You are not doing anything fun..." "11" "21" "5"
+		echo "Not doing anything."
+fi
+
+
+# script - stop
+=====================================================
+SCRIPT NAME: simpleinputbox.sh 
+=====================================================
+#!/bin/bash
+# a simple demo of an input dialog box
+
+# global variables / defaults
+INPUTOX=${INPUTBOX=dialog}
+TITLE="Default"
+MESSAGE="Something to display"
+XCOORD=10
+YCOORD=20
+
+# function declarations - start
+
+# display the input box
+funcDisplayInputBox () {
+		$INPUTBOX --title "$1" --inputbox "$2" "$3" "$4" 2>tmpfile.txt
+}
+# function declarations - stop
+
+# script - start
+
+funcDisplayInputBox "Display File Name" "Which file in the current directory do you want to display?" "10" "20"
+
+if [ "`cat tmpfile.txt`" != "" ]; then
+		cat "`cat tmpfile.txt`"
+else
+		echo "Nothing to do."
+fi
+
+# script - stop
+=====================================================
+SCRIPT NAME: simplemessagebox.sh 
+=====================================================
+#!/bin/bash
+# demo of a simple message box 
+
+# global variables / defaults
+MSGBOX=${MSGBOX=dialog}
+TITLE="Default"
+MESSAGE="Some message."
+XCORD=10
+YCORD=20
+
+
+# function declarations start
+
+# display the message box with our message
+funcDisplayMsgBox () {
+		$MSGBOX --title "$1" --msgbox "$2" "$3" "$4"
+}
+
+# function declarations stop
+
+
+# script - start
+if [ "$1" == "shutdown" ]; then
+		funcDisplayMsgBox "WARNING!" "Please press OK when you are ready to shut down the system" "10" "20"
+		echo "Shutting Down Now."
+else
+		funcDisplayMsgBox "Boring." "You are not doing anything interesting." "10" "20"
+		echo "Not doing anything, back to regular scripting."
+fi
+# script - stop

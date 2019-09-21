@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Reference Models</title>
+</head><body><span style="background-color: #0000ff">What is a Protocol?</span><br/>
+<br/>
+- the internet<br/>
+&#09;- an interconnected system of computer networks<br/>
+&#09;- a network comprised of networks<br/>
+&#09;- uses TCP/IP as a standard protocol<br/>
+&#09;- millions of private networks linked by a broad array of technologies<br/>
+&#09;<br/>
+&#09;- originated in the 1960s<br/>
+&#09;- developed by the US government<br/>
+<br/>
+&#09;- started as the ARPAnet<br/>
+&#09;&#09;- backbone for interconnection of regional academic and military networks<br/>
+<ul><li style="list-style-type: none">- more than 4.1 billion people use the internet</li>
+<li style="list-style-type: none"></li>
+</ul>
+- a protocol is a set of rules that govern communication over the internet<ul><li style="list-style-type: none">- protocols standardize network communications</li>
+<li style="list-style-type: none">- uses the right protocol for the right program</li>
+<li style="list-style-type: none">- protocols are to computers what language is to humans</li>
+<li style="list-style-type: none">- for two devices on a network to communicat, they must use the same protocol</li>
+<li style="list-style-type: none"></li>
+</ul>
+- IP: Internet Protocol<ul><li style="list-style-type: none">- how data packets move through a network</li>
+<li style="list-style-type: none">- protocols ensure that all machines are speaking the same language</li>
+<li style="list-style-type: none">- standardizes how devices route ip packets</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- forwarding IP packets from source to destination IP addresses</li>
+</ul>
+</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- IP addresses are used to identify a device on a network</li>
+<li style="list-style-type: none">&#09;- this IP address makes the computer accessible to other devices</li>
+</ul>
+<br/>
+<br/>
+<span style="background-color: #0000ff">Reference Models<br/>
+</span><br/>
+- conceptual frameworks for understanding relationships<br/>
+- guides users so that programs they create can communicate<br/>
+<br/>
+<br/>
+<span style="background-color: #0000ff">OSI Reference Model<br/>
+<br/>
+</span>- Open System Interconnection<br/>
+- reference model for how applications can communicate over a network<br/>
+<br/>
+- OSI is rarely actually implemented<br/>
+&#09;- model does not accurately represent modern communcations<br/>
+<br/>
+- the process between two endpoints can be divided into seven unique layers<br/>
+&#09;- data flows up and down the layers during the communcation process<br/>
+<br/>
+- layer 7: application layer<ul><li style="list-style-type: none">- the most known protocols</li>
+</ul>
+&#09;- example: HTTP, Telnet, FTP, SMTP, TFTP, DNS, SNMP<ul><li style="list-style-type: none">- layers 5 - 6 are often grouped together as the application layer</li>
+</ul>
+&#09;- layer at &nbsp;which communication partners are identified<br/>
+&#09;- apps with user interaction<br/>
+&#09;- the set of services an application can make use of<br/>
+<br/>
+- layer 6: presentation layer<br/>
+&#09;- usuallly part of an OS<br/>
+&#09;- different formats: ASCII, MP3, JPG<br/>
+&#09;- converts incoming and outgoing data from one format to another<br/>
+&#09;&#09;- ex: cleartext to encrypted text<br/>
+<br/>
+- layer 5: session layer<br/>
+&#09;- sets up, coordinates, and terminates conversations<br/>
+&#09;- sessions and sockets: SQL, RPC<br/>
+&#09;- authentication and reconnection after interruption<br/>
+&#09;- TCP and UDP provide these services for most applications<br/>
+&#09;<br/>
+- layer 4: transport layer<br/>
+&#09;- example: TCP, UDP<br/>
+&#09;- manages packetization of data<ul><li style="list-style-type: none">- checks for errors when packet arrives</li>
+</ul>
+&#09;- flow and error control handled by: TCP, UDP<br/>
+<br/>
+- layer 3: network layer<br/>
+&#09;- example: IP<ul><li style="list-style-type: none">- addresses hosts, encapsulates data into packets</li>
+</ul>
+&#09;- end to end communcation and virtual addresses are handled by IP<br/>
+&#09;- sends data to the right destination and receives packets as well<ul><li style="list-style-type: none">- IP is the network layer for the internet</li>
+</ul>
+<br/>
+- layer 2: data link layer<ul><li style="list-style-type: none">- example: 802.3 ethernet, 802.4 token bus, 802.11 wireless lan, fddi</li>
+</ul>
+&#09;- sets links on the physical network and puts packets into frames<br/>
+&#09;- two sublayers<br/>
+&#09;&#09;- media access control layer<br/>
+&#09;&#09;- logical link layer<br/>
+&#09;- ethernet is the main data link layer in use<br/>
+<br/>
+- layer 1: physical layer<ul><li style="list-style-type: none">- example: token ring, 10Base-T, 100Base-T</li>
+</ul>
+&#09;- transports bits across the network in electrical, optical, or radio level<br/>
+&#09;- provides hardware means of sending and receiving data<br/>
+<br/>
+Example DNS Query:<br/>
+- the data unit transferred between two endpoints has a different name on each layer<br/>
+&#09;- layers 5, 6, and 7 transmit data<br/>
+&#09;- layer transmits segments and datagrams<br/>
+&#09;- layer 3 transmits packets<ul><li style="list-style-type: none">- layer 2 transmits frames</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- packets at layer one and layer two are managed by the network interface of your device</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- ethernet card</li>
+</ul>
+</li>
+<li style="list-style-type: none">- packets at layers 3 -7 are managed by the CPU and OS</li>
+<li style="list-style-type: none">&#09;- layer 3 and layer 4 packets are managed by the OS</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- packets at layer 5 -7 are managed by their related application or service</li>
+</ul>
+&#09;&#09;- web browser, DNS service<br/>
+<br/>
+<br/>
+<span style="background-color: #0000ff">OSI vs TCI/IP</span><br/>
+<br/>
+- TCP model is similar to the OSI model<br/>
+- represents the real world implementation of networks<br/>
+<br/>
+- application, presentation, and session layers are combined into application layer in TCP/IP model<br/>
+<br/>
+- physical adn data link layers are combined into the data link layer in the TCP/IP model<br/>
+</body></html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>VPNs</title>
+</head><body><span style="background-color: #0000ff">VPNs</span><br/>
+<br/>
+- provide a degree of anonymity<br/>
+&#09;- should be combined with more anonymization methods<br/>
+<br/>
+- one of the simpler methods of anonymizing<br/>
+- less resistant to motivated attackers<br/>
+<br/>
+- enable confidentiality by creating an encrypted tunnel over the internet<br/>
+<br/>
+- traffic is only encrypted from the client to the VPN exit node<br/>
+<br/>
+- VPN client can also be installed on a router<br/>
+&#09;- allows all traffic over your local network to be sent over VPN connection<br/>
+<br/>
+- can have VPN client within a VM<br/>
+<br/>
+- nested VPNs<br/>
+&#09;- VPNs that connect to VPNs<br/>
+<br/>
+- why use a VPN?<br/>
+&#09;- can protect against hackers and trackers<br/>
+&#09;&#09;- hides traffic in VPN<br/>
+&#09;&#09;- prevents against SSL stripping<br/>
+&#09;- hides traffic from ISP<br/>
+&#09;- nation state won't be able to see your traffic after you hit the VPN server<br/>
+&#09;&#09;- you are still not protected against a nation state that wants you<br/>
+&#09;&#09;&#09;- requires active surveillance<br/>
+&#09;- can bypass geographic restrictions<br/>
+&#09;&#09;- changes IP address to allow access<br/>
+&#09;- mitigates man in the middle attacks<br/>
+<br/>
+- VPN providers provide certificates that allow authentication<br/>
+&#09;- VPN client will only work with the correct public key<br/>
+<br/>
+<span style="background-color: #0000ff">VPN Protocols</span><br/>
+<br/>
+- include:<br/>
+&#09;- Point-to-Point Tunneling Protocol (PPTP)<ul><li style="list-style-type: none"><ul><li style="list-style-type: none">- not recommended</li>
+<li style="list-style-type: none">- major security flaws</li>
+<li style="list-style-type: none">- vulnerable to dictionary and bit-flipping attacks</li>
+<li style="list-style-type: none">- comes with Windows</li>
+<li style="list-style-type: none">- easily decrypted by nation states</li>
+<li style="list-style-type: none">- last option</li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+<li style="list-style-type: none">- Layer Two Tunneling Protocol (L2TP) and Internet Protocol Security (IPSec)</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- usually implemented together</li>
+<li style="list-style-type: none">- most modern OS support these technologies</li>
+<li style="list-style-type: none">- uses fixed ports and protocols</li>
+<li style="list-style-type: none">- inflexible</li>
+<li style="list-style-type: none">- more easily blocked by NAT firewalls</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- may require port forwarding</li>
+</ul>
+</li>
+<li style="list-style-type: none">- useful if not concerned with nation state adversaries</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- NSA uses a flaw to decrypt traffic</li>
+<li style="list-style-type: none">- IPSec is compromised on a nation state level</li>
+<li style="list-style-type: none">- IPSec may have been deliberately weakened by the NSA</li>
+</ul>
+</li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+<li style="list-style-type: none">- OpenVPN</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- open source</li>
+<li style="list-style-type: none">- uses OpenSSL and TLS</li>
+<li style="list-style-type: none">- protocols and ports are configurable</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- runs fastest over UDP but can use TCP</li>
+</ul>
+</li>
+<li style="list-style-type: none">- use can be masked</li>
+<li style="list-style-type: none">- supports lots of encryption algorithms</li>
+<li style="list-style-type: none">- not natively supported by most OS</li>
+<li style="list-style-type: none">- may need to download free third party software to run</li>
+<li style="list-style-type: none">&#09;- may be too much for non-technical users</li>
+<li style="list-style-type: none">- no evidence that it has been compromised</li>
+<li style="list-style-type: none">- session keys are periodically changed</li>
+<li style="list-style-type: none">- use this protocol whenever possible</li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+<li style="list-style-type: none">- Secure Socket Tunneling Protocol (SSTP)</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- proprietary standard owned by microsoft</li>
+<li style="list-style-type: none">- similar to OpenVPN but only for Windows</li>
+<li style="list-style-type: none">- may be compromised by NSA</li>
+</ul>
+</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- Internet Key Exchange (IKEv2)</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- developed by Cisco and Microsoft</li>
+<li style="list-style-type: none">- useful on mobile devices</li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+</ul>
+- use OpenVPN whenever possible<br/>
+<br/>
+<br/>
+VPN Weaknesses<br/>
+<br/>
+- slower than if using ISP alone<ul><li style="list-style-type: none">- internet traffic route is longer</li>
+<li style="list-style-type: none"></li>
+</ul>
+- much faster than other anonymizing services<br/>
+<br/>
+- a VPN will not hide your identity from a motivated nation state<br/>
+&#09;- use nested VPNs, Tor, and other technologies to hide your traffic from a nation state<ul><li style="list-style-type: none">- a VPN is just a piece of the solution</li>
+<li style="list-style-type: none"></li>
+</ul>
+- deep packet inspection at firewalls can determine if you are using a VPN<ul><li style="list-style-type: none">- VPN traffic is distinct from https</li>
+<li style="list-style-type: none">- VPN use is obvious and may cause you to be targeted for active surveillance</li>
+<li style="list-style-type: none"></li>
+</ul>
+- stunnel and obfsproxy<br/>
+&#09;- avoids VPN profiling<br/>
+<br/>
+- good VPNs are not free<br/>
+<br/>
+- VPNs leave a money trail<ul><li style="list-style-type: none">- use an anonymous form of payment so that the paper trail does not lead back to you</li>
+<li style="list-style-type: none"></li>
+</ul>
+- low latency weaknesses<ul><li style="list-style-type: none">- traffic confirmation or end-to-end correlation attacks </li>
+<li style="list-style-type: none">- nation states may be able to monitor your traffic on the way to its destination and use traffic confirmation to confirm your identity</li>
+<li style="list-style-type: none">- internet routers have been compromised by nation states</li>
+<li style="list-style-type: none">- Tor is more resistant to this end to end correlatiion attack</li>
+<li style="list-style-type: none">- ddos attacks can be performed on the user to monitor connections and identify a user</li>
+<li style="list-style-type: none">- attack code on the destination server may reveal your identity</li>
+<li style="list-style-type: none"></li>
+</ul>
+- web traffic fingerprinting<ul><li style="list-style-type: none">- passive eavesdropping that watches encrypted data streams</li>
+<li style="list-style-type: none">- adversary can guess which web page is being visited</li>
+<li style="list-style-type: none">- they must know the pattern for the the page in advance</li>
+<li style="list-style-type: none">- your destination may be revealed</li>
+<li style="list-style-type: none">- OpenSSH requires a larger amount of data to reveal your information</li>
+<li style="list-style-type: none"></li>
+</ul>
+- if you don't run your VPN continuously, you give away your intentions when you connect to VPN<ul><li style="list-style-type: none">- smpt is often blocked because of spammers</li>
+<li style="list-style-type: none">- some sites block VPNs</li>
+<li style="list-style-type: none"></li>
+</ul>
+- using a VPN for multiple identities can contaminate your alias<br/>
+<br/>
+- VPNs do not filter or replace TCP packets<ul><li style="list-style-type: none"></li>
+</ul>
+- sites may lock your account for suspicious activity if you are using a VPN<br/>
+<br/>
+- VPN browsers do not offer security like a hardened browser like Tor or Jondonym<ul><li style="list-style-type: none">- VPN sessions can be tracked if you do not ues a hardened browser</li>
+<li style="list-style-type: none"></li>
+</ul>
+- VPNs provide security, not anonymity<ul><li style="list-style-type: none">- you have to give your info to the VPN</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- they have your source IP and destination</li>
+</ul>
+</li>
+<li style="list-style-type: none">- use nested VPNs in combination with other services for more anonymity</li>
+<li style="list-style-type: none"></li>
+</ul>
+<br/>
+<span style="background-color: #0000ff">Can you trust VPN providers?</span><br/>
+<br/>
+- you must reveal your real IP address to connect to a VPN<br/>
+<br/>
+- VPNs can log all of your activity<ul><li style="list-style-type: none">- nested VPNs can mitigate this weakness</li>
+<li style="list-style-type: none"></li>
+</ul>
+- you must choose a VPN that you trust more than your ISP<br/>
+<br/>
+- VPN providers can be served with court orders to reveal logs<br/>
+<br/>
+- warrant canaries<ul><li style="list-style-type: none">- used to inform the user that a warrant has been served to a VPN provider</li>
+<li style="list-style-type: none">- look for a warrant canary</li>
+<li style="list-style-type: none">- warrantcanary.org</li>
+<li style="list-style-type: none">- be skeptical about these warrant canaries</li>
+<li style="list-style-type: none"></li>
+</ul>
+- US VPN providers are not required to maintain logs and info about your identity<ul><li style="list-style-type: none">- EU VPN providers maintain info about you</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- OK Data Retention Laws in Europe</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- Bulgaria</li>
+<li style="list-style-type: none">- Cyprus</li>
+<li style="list-style-type: none">- Iceland</li>
+<li style="list-style-type: none">- Luxembourg</li>
+<li style="list-style-type: none">- Netherlands</li>
+<li style="list-style-type: none">- Romania</li>
+<li style="list-style-type: none">- Serbia</li>
+<li style="list-style-type: none">- Sweden</li>
+<li style="list-style-type: none">- Do your own research</li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+- avoid all VPNs in jurisdictions that are forced to log your information<br/>
+<br/>
+- VPN providers are pressured into co-operating with nation states<br/>
+<br/>
+- avoid the fourteen eyes for spying and subpoenas<ul><li style="list-style-type: none">- Austrailia</li>
+<li style="list-style-type: none">- Canada</li>
+<li style="list-style-type: none">- New Zealand</li>
+<li style="list-style-type: none">- United Kingdom</li>
+<li style="list-style-type: none">- United States of America</li>
+<li style="list-style-type: none">- Denmark</li>
+<li style="list-style-type: none">- France</li>
+<li style="list-style-type: none">- Netherlands</li>
+<li style="list-style-type: none">- Norway</li>
+<li style="list-style-type: none">- Belgium</li>
+<li style="list-style-type: none">- Germany</li>
+<li style="list-style-type: none">- Italy</li>
+<li style="list-style-type: none">- Spain</li>
+<li style="list-style-type: none">- Sweden</li>
+<li style="list-style-type: none"></li>
+</ul>
+- avoid using VPNs in the nation state that you are trying to avoid<br/>
+<br/>
+<br/>
+VPNs and Domain Name System Leaks<br/>
+<br/>
+- DNS is responsible for resolving domain names<br/>
+<br/>
+- computer checks the local cache to see if it already knows the ip<br/>
+<br/>
+- if the computer does not know the ip, it checks a DNS server<br/>
+<br/>
+- ISPs usually run DNS servers<br/>
+<br/>
+- you can change your primary and secondary DNS servers<br/>
+<br/>
+- some DNS servers filter malicious traffic<br/>
+<br/>
+- DNS queries happen on UDP or TCP port 53<ul><li style="list-style-type: none">- transmitted in plaintext</li>
+<li style="list-style-type: none">- use a VPN to hide DNS queries</li>
+<li style="list-style-type: none"></li>
+</ul>
+- DNS redirected through transparent proxies<ul><li style="list-style-type: none">- ISP redirect all DNS requests to their own DNS server</li>
+<li style="list-style-type: none">- used for adverts and censorship</li>
+</ul>
+<br/>
+- ipleak.net<ul><li style="list-style-type: none">- go here to check your DNS server</li>
+<li style="list-style-type: none">- change your DNS server in your OS</li>
+<li style="list-style-type: none">- go back to this website to see if your DNS server has been updated</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- used to check for transparent DNS redirection</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- use a VPN to avoid transparent proxies</li>
+<li style="list-style-type: none"></li>
+</ul>
+- DNS Poisoning/Spoofing<ul><li style="list-style-type: none">- can be used to deny access to websites</li>
+<li style="list-style-type: none">- url will resolve to the wrong ip</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- google: how to spoof DNS on a lan</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- use a VPN to avoid DNS spoofing</li>
+<li style="list-style-type: none"></li>
+</ul>
+- DNSCrypt<ul><li style="list-style-type: none">- prevents DNS spoofing</li>
+<li style="list-style-type: none">- verifies that responses are coming from the chosen server</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+</ul>
+<span style="background-color: #0000ff">OpenVPN on Linux</span><br/>
+<br/>
+- many linux VPN providers do not provide linux clients<br/>
+<br/>
+- use OpenVPN for VPN on Linux<br/>
+<br/>
+- download a config file<ul><li style="list-style-type: none">- ovpn format</li>
+<li style="list-style-type: none">- plaintext config file + server certificate</li>
+<li style="list-style-type: none"></li>
+</ul>
+- apt install openvpn<br/>
+- apt install network-manager-openvpn-gnome<br/>
+<br/>
+<br/>
+<span style="background-color: #0000ff">Preventing VPN Leaks - &nbsp;Firewalls and Killswitches</span><br/>
+<br/>
+- DNS can leak data, including queries and ipv6<br/>
+<br/>
+- DNS queries may be sent to the ISP instead of the VPN<br/>
+<br/>
+- ipv6 packets can also be leaked<br/>
+<br/>
+- your info can also be leaked when the VPN drops<ul><li style="list-style-type: none">- traffic will be sent directly to the destination from your ISP</li>
+<li style="list-style-type: none"></li>
+</ul>
+- disable ipv6<br/>
+<br/>
+- set up iptables to block all non-vpn connections<br/>
+<br/>
+- use VPN daemon to stop all connections when vpn access is lost<br/>
+<br/>
+<br/>
+<span style="background-color: #0000ff">Choosing the Right VPN Provider</span><br/>
+<br/>
+- consider what is the threat you are trying to protect yourself against<br/>
+<br/>
+- firewalls<ul><li style="list-style-type: none">- look for VPNs that hide the fact that you are using a VPN</li>
+</ul>
+<br/>
+- wifi hotspots<ul><li style="list-style-type: none">- look for something fast and local</li>
+<li style="list-style-type: none"></li>
+</ul>
+- consider:<ul><li style="list-style-type: none">- no company registered in the sphere of influence of adversary</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- outside the us or eu</li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+<li style="list-style-type: none">- no user logs</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- OpenVPN with recommended encryption</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- 2048-bit or AES256</li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+<li style="list-style-type: none">- anonymous payments</li>
+<li style="list-style-type: none">- no personal information</li>
+<li style="list-style-type: none">- simultaneous devices and speed</li>
+<li style="list-style-type: none">- no external support services</li>
+<li style="list-style-type: none">- change password</li>
+<li style="list-style-type: none">- no vps or cloud servers</li>
+<li style="list-style-type: none">- </li>
+<li style="list-style-type: none">- client software prevents leaking</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- DNS, ipv6, kill switch, firewall</li>
+</ul>
+</li>
+<li style="list-style-type: none">- ability to run your own DNS servers</li>
+<li style="list-style-type: none">- have physical control over own servers and network</li>
+<li style="list-style-type: none">- read terms and conditions, terems of services accpetable</li>
+<li style="list-style-type: none">- hardened servers</li>
+<li style="list-style-type: none">- no extra services running on the VPN</li>
+<li style="list-style-type: none">- user information is used securesly</li>
+<li style="list-style-type: none">- port forwarding if required</li>
+</ul>
+<br/>
+- blackvpn<br/>
+- nordvpn<br/>
+- airvpn<br/>
+- ivpn<br/>
+- mullvad<br/>
+<br/>
+- r/vpn<br/>
+<br/>
+- make your own VPN<br/>
+<ul><li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+</ul>
+<br/>
+<br/>
+</body></html>

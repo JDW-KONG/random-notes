@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Users</title>
+</head><body>- do not do everything as root<br/>
+<br/>
+- adduser justin<br/>
+&#09;- creates a user<br/>
+<br/>
+- su justin<br/>
+&#09;- switches to user justin<br/>
+<br/>
+- usermod -aG sudo justin<br/>
+&#09;- adds user to sudoers group<br/>
+<br/>
+- passwd justin<br/>
+&#09;- creates a new password for the user<br/>
+<br/>
+- visudo<br/>
+&#09;- opens superuser file for manual changes<br/>
+<br/>
+- deluser --remove-home justin<br/>
+&#09;- deletes user and removes home directory</body></html>

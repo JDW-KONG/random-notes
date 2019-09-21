@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Data Link Layer</title>
+</head><body><span style="background-color: #0000ff">Standards and Protocols<br/>
+<br/>
+</span>- second layer in OSI model<br/>
+<br/>
+- responds to service requests from the layers above and below it<br/>
+<br/>
+- main responsibility:<br/>
+&#09;- encoding bits into packets prior to transmission<br/>
+&#09;- decoding packets back into bits at the destination<br/>
+<br/>
+- other responsibilites<br/>
+&#09;- logical link control<br/>
+&#09;- media access control<br/>
+&#09;- hardware addressing<br/>
+&#09;- error detection<br/>
+&#09;- handling and defining physical layer standards<br/>
+<br/>
+- sub layers<br/>
+&#09;- media access control<br/>
+&#09;&#09;- governs protocol access to the physical network medium<br/>
+&#09;&#09;- devices can identify each other on this layer<br/>
+&#09;- logical link control layer<br/>
+&#09;&#09;- manages communications among devices on a single link on a network<br/>
+<br/>
+- standards of data link layer<br/>
+&#09;- ARP: address resolution protocol<br/>
+&#09;- ATM<br/>
+&#09;- CDP: Cisco Discovery Protocol<br/>
+&#09;- CAN: controller area network<br/>
+&#09;- Ethernet<ul><li style="list-style-type: none"><ul><li style="list-style-type: none">- most commonly used data link protocol</li>
+</ul>
+</li>
+</ul>
+&#09;- FDDI: Fiber Distributed Data Interface<br/>
+&#09;- Frame Relay<br/>
+&#09;- HLDC: High-Level Data Link Control<br/>
+&#09;- IEEE 802.2 and 802.11<br/>
+&#09;- LAPD: link access procedures, D channel<br/>
+&#09;- multiprotocol label switching<br/>
+&#09;- nortel discovery protocol<br/>
+&#09;- split multi-link trunking<br/>
+&#09;- PPP: point-to-point protocol<br/>
+&#09;- SLIP: serial line internet protocol - obsolete<br/>
+&#09;- spanning tree protocol<br/>
+&#09;- StarLan<br/>
+&#09;- token ring<br/>
+&#09;- UDLD: unidirectional link detection <br/>
+<br/>
+<br/>
+<span style="background-color: #0000ff">Ethernet: Principles, Frames, and Headers<br/>
+<br/>
+</span>- relatively inexpensive, reasonably fast<br/>
+<br/>
+- commerically introduced in 1980 and first standardised in 1983 as IEEE 802.3<br/>
+&#09;- has been refined to be faster and more stable over long distances<br/>
+<br/>
+- ethernet design principles<br/>
+&#09;- multiple computers can send data at any time<br/>
+&#09;- collision handling: carrier sense multiple acees - collision detection (CSMA/CD)<ul><li style="list-style-type: none"><ul><li style="list-style-type: none">- bith computers will stop sending and pick a random time to retransmit data</li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+</ul>
+- cable types<ul><li style="list-style-type: none">- 10Base2, 10Base5</li>
+<li style="list-style-type: none">&#09;- old</li>
+<li style="list-style-type: none">- 10BaseT, 100BaseT, 1000BaseT</li>
+<li style="list-style-type: none">- 10BaseF</li>
+<li style="list-style-type: none">&#09;- fiber cables</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- initial number is the speed in Mb</li>
+<li style="list-style-type: none"></li>
+</ul>
+- ethernet packets at the data link layer send frames<br/>
+<br/>
+- ethernet packet at physical layer<br/>
+&#09;- 8 bytes<br/>
+&#09;- contains destination mac address and start frame delimiter<br/>
+<br/>
+- ethernet type II frames<ul><li style="list-style-type: none">- each ethernet frame header contains:</li>
+<li style="list-style-type: none">&#09;- 14 bytes</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- destination mac address</li>
+<li style="list-style-type: none">- source mac address</li>
+<li style="list-style-type: none">- ethernet type</li>
+</ul>
+</li>
+<li style="list-style-type: none">- ethernet frame also contains data to be sent</li>
+<li style="list-style-type: none">&#09;- 46 - 1500 bytes</li>
+<li style="list-style-type: none">&#09;- IP, ARP, Payload, etc.</li>
+<li style="list-style-type: none">- also includes a frame check sequence</li>
+<li style="list-style-type: none">&#09;- 4 bytes</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+</ul>
+<span style="background-color: #0000ff">ARP: Address Resolution Protocol</span><ul><li style="list-style-type: none"></li>
+</ul>
+- a network layer protocol used for mapping an ipv4 address to a physical address<br/>
+<br/>
+- one computer broadcasts an arp request asking for destination computer's mac address<ul><li style="list-style-type: none">- each system on the network segment receives the request</li>
+<li style="list-style-type: none">- only the computer with the correct mac address will respond</li>
+<li style="list-style-type: none">- each machine uses arp requests to build an arp table</li>
+<li style="list-style-type: none"></li>
+</ul>
+- arp tables<br/>
+&#09;- computers cannot send an arp request broadcast each time they need a mac address<ul><li style="list-style-type: none">- they store the ip address and corresponding mac address in a table for future reference</li>
+<li style="list-style-type: none">- entries are updated every 15 to 20 methods</li>
+<li style="list-style-type: none">- look into the arp table of a system that you are scanning to see other devices on the network</li>
+</ul>
+<br/>
+<br/>
+<span style="background-color: #0000ff">VLANs - Virtual Local Area Networks</span><ul><li style="list-style-type: none"></li>
+</ul>
+- a lan is a local area network<br/>
+&#09;- group of devices that share a common communication line<br/>
+&#09;- lan connections are used to share resources locally<br/>
+<br/>
+- virtual lan is a group of hosts that communicate like a lan, even if they are not on the same switch<ul><li style="list-style-type: none">- partitioned and isolated in a computer network at the data link layer</li>
+<li style="list-style-type: none">- applies tags to network packets</li>
+<li style="list-style-type: none">&#09;- creates the appearance of traffic on a single network</li>
+<li style="list-style-type: none"></li>
+</ul>
+- why use VLANS<br/>
+&#09;- groups with sensitive data are separated from the rest of the network<br/>
+&#09;- cost reduction, less need for network upgrades<br/>
+&#09;- higher performance <br/>
+&#09;&#09;- reduces the number of router hip and increases apparent bandwidth<ul><li style="list-style-type: none">- broadcast storm mitigation</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- automatically reduces network broadcasts</li>
+</ul>
+</li>
+<li style="list-style-type: none">- improved IT staff efficiency</li>
+<li style="list-style-type: none">&#09;- makes it easier to manage the network</li>
+<li style="list-style-type: none">- simpler company management</li>
+<li style="list-style-type: none">&#09;- can have VLANs dedicated to specific types of employees</li>
+<li style="list-style-type: none"></li>
+</ul>
+<br/>
+<span style="background-color: #0000ff">WLANS</span><br/>
+<br/>
+- wireless networks connect nodes using radio communication<br/>
+<br/>
+- WLANs link devices over a short distance using an access point<br/>
+<br/>
+- uses the IEEE 802.11 family of communications<ul><li style="list-style-type: none">- most widely used wireless communication standard</li>
+<li style="list-style-type: none">- 802.11 b and c are most popular</li>
+<li style="list-style-type: none">- 802.11 ac is the newest standard</li>
+<li style="list-style-type: none">&#09;- includes wider channels and 5GHz band</li>
+<li style="list-style-type: none"></li>
+</ul>
+- wireless networks are identified using SSIDs<ul><li style="list-style-type: none">- service set identifiers</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- SSID</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- generic term, referring to the wireless network name</li>
+</ul>
+</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- BSSID</li>
+<li style="list-style-type: none">&#09;- basic SSID - the MAC address of the AP</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- ESSID</li>
+<li style="list-style-type: none">&#09;- extended SSID, a name applied to one or more APs providing the same service to access a wired lan</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- in some deployments, each AP has its own unique ESSID</li>
+<li style="list-style-type: none">- in others, a single ESSID is shared across multiple access points to support roaming</li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+</ul>
+- most significant wireless network attacks<br/>
+&#09;- denial of service<ul><li style="list-style-type: none"><ul><li style="list-style-type: none">- blocking legitimate users from accessing the network</li>
+</ul>
+</li>
+<li style="list-style-type: none">- rogue access points</li>
+<li style="list-style-type: none">&#09;- unauthorized access points set up to bypass wireless security</li>
+<li style="list-style-type: none">- misconfiguration</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- access points not configure appropriately</li>
+</ul>
+</li>
+<li style="list-style-type: none">- traffic capture/intercept</li>
+<li style="list-style-type: none">&#09;- sniffing the network</li>
+<li style="list-style-type: none">- crypto attacks</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- weak wireless encryption protocols</li>
+</ul>
+</li>
+<li style="list-style-type: none">- client-duping</li>
+<li style="list-style-type: none">&#09;- set up a bogus access point and access data</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+</ul>
+&nbsp;</body></html>

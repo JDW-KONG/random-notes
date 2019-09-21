@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DNS Poisoning and Hijacking</title>
+</head><body><span style="background-color: #00007f">DNS Poisoning and Hijacking<br/>
+</span>- <u>DNS poisoning is the process of putting bad entries into the DNS cache</u><br/>
+&#09;- <u>diverts requests to a fraudulent website that looks like the real website</u><span style="background-color: #00007f"><br/>
+</span><br/>
+- modify the DNS server<br/>
+&#09;- requires some crafty hacking<br/>
+&#09;- <u>manipulate info within the DNS server to send users to the wrong sites</u><br/>
+<br/>
+- <u>modify the client host file</u><br/>
+&#09;- <u>the host file takes precent over DNS queries</u><br/>
+<br/>
+- send a fake response to a valid DNS request<br/>
+&#09;- requires a redirection of the original request or resulting response<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">DNS Spoofing/Poisoning</span><br/>
+- user 1 makes a request to the DNS server<br/>
+- bad guy takes control of the server and modifies DNS values<br/>
+- user 2 makes a request and is redirected to a site of the attackers choosing<br/>
+<br/>
+- dns poisoning<br/>
+&#09;- <u>DNS records are first checked on the DNS cache on the local machine</u><br/>
+&#09;- <u>the hosts file is checked afterwards, and then the DNS server</u><br/>
+<br/>
+- DNSSEC<br/>
+&#09;- <u>encrypts DNS traffic</u><br/>
+&#09;- <u>designed to prevent DNS spoofing attacks, DNS cache poisoning, and DNS traffic capture</u><br/>
+&#09;- <u>produces RRSIG records for each entry in the DNS database</u><br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Domain Hijacking</span><br/>
+- <u>when someone tries to change the domain registration of a domain with internet authorities so that they can control it for profit.</u><br/>
+&#09;- attacker re-registers the domain of a well known company<br/>
+&#09;- gains access to the control panel with the original domain's company<br/>
+&#09;- take out a hosting package with another hosting company<br/>
+&#09;- copy all files from old hosting to new hosting<br/>
+&#09;- point DNS records to new hosting to take sales from old host<br/>
+<br/>
+- <u>get access to the domain registration and you have control where the traffic flows</u><br/>
+&#09;- you don't need to touch the actual servers<br/>
+&#09;- determines the DNS names and DNS IP addresses<br/>
+<br/>
+- many ways to get into the account<br/>
+&#09;- brute force<br/>
+&#09;- social engineer the password<br/>
+&#09;- gain access to the email address that manages the account<br/>
+&#09;- the usual things<br/>
+&#09;</body></html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Creating and Manipulating Files</title>
+</head><body>- a file is just a &nbsp;pointer to an inode that lives on a disk<br/>
+&#09;- this node contains information about the data<br/>
+&#09;&#09;- filename, location on disk, other metadata<br/>
+<br/>
+&#09;- acts as a file serial number<br/>
+<br/>
+&#09;- ls -i swap<br/>
+&#09;&#09;- view inode values<br/>
+<br/>
+<br/>
+Creating files<br/>
+- touch: creates a zero byte file<br/>
+- cp: copies file to another<br/>
+- mv: moves a file from one location to another<ul><li style="list-style-type: none">- also changes file names</li>
+</ul>
+- rm: removes inode-filename link<br/>
+&#09;- data still exists on the drive<br/>
+<br/>
+<br/>
+Manipulating files<br/>
+- vim, nano, ed, emacs<br/>
+&#09;- saving a document creates a new inode<br/>
+<br/>
+- finding files<br/>
+&#09;- find<br/>
+&#09;&#09;- specify a directory to start om<br/>
+&#09;&#09;- the command will search the directory structure to find the file<br/>
+<br/>
+&#09;&#09;- find . -name *.txt<br/>
+&#09;&#09;&#09;- finds all files with names that end in '.txt'<br/>
+&#09;&#09;&#09;- outputs to stdout<br/>
+<br/>
+&#09;- common flags<br/>
+&#09;&#09;- type f: find regular file<ul><li style="list-style-type: none">&#09;- type d: find directories</li>
+<li style="list-style-type: none">&#09;- type l: find symbolic links</li>
+<li style="list-style-type: none">&#09;</li>
+<li style="list-style-type: none">&#09;- user: file is owned by user</li>
+<li style="list-style-type: none"></li>
+</ul>
+<br/>
+<br/>
+</body></html>

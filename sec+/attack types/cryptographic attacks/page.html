@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cryptographic Attacks</title>
+</head><body><span style="background-color: #00007f">Cryptographic Attacks</span><br/>
+<br/>
+- you've encrypted data and sent it to another person<br/>
+&#09;- is it really secure<br/>
+&#09;- how do you know<br/>
+<br/>
+- the bad guy doesn't have the key, so he breaks the encryption<br/>
+<br/>
+- <u>there are many potential cryptographic shortcomings</u><br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Account Lockout</span><br/>
+&#09;- <u>the number of attempts a user can make to insert their password before being locked out of the system</u><br/>
+&#09;- <u>can stop both dictionary and brute force attacks</u><br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Minimum Number of Characters</span><br/>
+- <u>the best way to prevent the password from being cracked is salting or key stretching</u><br/>
+&#09;- <u>randomized characters are inserted into the password</u><br/>
+&#09;- <u>this will prevent a dictionary attack, will only slow down a brute force attack</u><br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Login Errors</span><br/>
+- <u>inserting an incorrect password</u><br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Weak Implementations</span><br/>
+- using the most common passwords<br/>
+- a low number of characters<br/>
+- simple passwords<br/>
+- default passwords for devices<br/>
+<br/>
+- weak encryption<br/>
+&#09;- one weak link breaks the entire chain<br/>
+<br/>
+- 802.11 WEP<br/>
+&#09;- the RC4 key can be recovered by gathering enough packets<br/>
+&#09;- the algorithm didn't sufficiently protect the key<br/>
+<br/>
+- <u>DES - data encryption standard</u><br/>
+&#09;- relatively small 56-bit keys<br/>
+&#09;- <u>modern systems can brute force this pretty quickly</u><br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Birthday Attack</span><br/>
+- in a classroom of 23 students, what is the chance of two students having the same birthday?<br/>
+&#09;- <u>23 students - about 50%</u><br/>
+&#09;- <u>for a class of 30 the chance is about 70%</u><br/>
+<br/>
+- <u>in the digital world this is known as a hash collision</u><br/>
+&#09;- <u>a hash collision is the same hash value for two different plaintexts</u><br/>
+&#09;- <u>attackers try to find a collision through brute force</u><br/>
+<br/>
+- <u>the attacker will generate multiple versions of plaintext to match the hashes</u><br/>
+&#09;- protect yourself with a large hash output size<br/>
+<br/>
+- <u>if we store passwords as hashes, all passwords that are the same will produce the same hash if we use the same hashing algorithm</u><br/>
+&#09;- look for collisions in hashes<br/>
+&#09;- <u>if two hashes with the same value are found, the passwords are the same</u><br/>
+<br/>
+- <u>digital signatures are susceptible to a birthday attack</u><br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Known Plaintext Attacks</span><br/>
+- <u>attacker has both the plaintext and the encrypted data</u><br/>
+&#09;- <u>if you know the original plaintext, you may be able to find a wedge that is revealed in the ciphertext</u><br/>
+&#09;- the known plaintext is the crib<br/>
+<br/>
+- <u>WWI enigma cipher</u><br/>
+&#09;- easier to break if you knew some plaintext<br/>
+&#09;- daily weather report (wetter)<br/>
+&#09;- numbers were common (eins)<br/>
+&#09;- royal air force would "seed" the north sea with mines<br/>
+&#09;- future messages woul reference the harbor name<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Rainbow Tables</span><br/>
+- <u>an optimized, pre-built set of hashes</u><ul><li style="list-style-type: none">- <u>lists of precomputed passwords with a corresponding hash</u></li>
+</ul>
+&#09;- these tables speed up the cracking of passwords that have been hashed<br/>
+&#09;- doesn't need to contain every hash<br/>
+&#09;- the calculations have already been done<br/>
+<br/>
+- <u>remarkable speed increase</u><br/>
+&#09;- especially with longer password lengths<br/>
+<br/>
+- need different tables for different hashing methods<br/>
+&#09;- windows is different than mysql<br/>
+<br/>
+- <u>rainbow tables won't work with salted hashes</u><br/>
+&#09;- additional random value added to the original hash<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Dictionary Attacks</span><br/>
+- <u>people use common words as passwords</u><br/>
+&#09;- you can find them in the dictionary<br/>
+<br/>
+- <u>if you're using brute force, you should start with the easy ones</u><br/>
+&#09;- password, ninja, football<br/>
+<br/>
+- many common wordlists are available on the net<br/>
+&#09;- some are customized by language or line of work<br/>
+<br/>
+- this type of attack will catch the low hanging fruit<br/>
+&#09;- you'll need smarter attacks for smarter people<br/>
+<br/>
+- <u>using all the words in a dictionary to crack a password</u><br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Brute Force</span><br/>
+- <u>the password is the key</u><br/>
+&#09;- secret phrase<br/>
+&#09;- stored hash<br/>
+<br/>
+- brute force attacks - online<br/>
+&#09;- keep trying the login process<br/>
+&#09;- very slow<br/>
+&#09;- most accounts will lock out after a number of failed attempts<br/>
+<br/>
+- brute force the hash - offline<br/>
+&#09;- obtain the list of users and hashes<br/>
+&#09;- calculate a password hash, compare it to the stored hash<br/>
+&#09;- large computational resource requirement<br/>
+<br/>
+- <u>runs through all of the different combinations of letters and characters and will eventually crack a given password</u><br/>
+- <u>online mode: the attacker must use the same login interface as the user's application</u><br/>
+<br/>
+- <u>offline mode: requires the attacker to steal the password file first</u><br/>
+&#09;- <u>this will give them unlimited attempts at guessing the password</u><br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">The Password File</span><br/>
+- different across operating systems<br/>
+&#09;- different has methods<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Collisions</span><br/>
+- hash digests are supposed to be unique<br/>
+&#09;- <u>different input data should never create the same hash</u><br/>
+<br/>
+- MD5 hash<br/>
+&#09;- <u>message digest algorithm &nbsp;5</u><br/>
+&#09;- first published in 1992<br/>
+&#09;- collisions identified in 1996<br/>
+<br/>
+- december 2008: researchers created CA cert that appeared legit when MD5 is checked<br/>
+&#09;- built other certificates that appeared legit and issued by rapidssl<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Collision Attack</span><br/>
+&#09;- an attack on a cryptographic hash that tries to find two inputs producing the same hash value<br/>
+&#09;- known as a hash collision<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Salting Passwords</span><ul><li style="list-style-type: none">- <u>where a random set of characters is inserted into or appended to a password hash</u></li>
+<li style="list-style-type: none">&#09;- <u>prevents duplicate passwords from being stored</u></li>
+<li style="list-style-type: none">&#09;- <u>prevents rainbow table and collision attacks</u></li>
+</ul>
+<br/>
+<br/>
+<span style="background-color: #00007f">Downgrade Attacks</span><br/>
+- <u>instead of using perfectly good encryption, use something that's not so great</u><br/>
+&#09;- force the systems to downgrade their security<br/>
+<br/>
+- 1995 - SSL/TLS vulnerability - FREAK - Factoring RSA Export Keys<br/>
+&#09;- public key pairs can be limited to 512 bits or less<br/>
+&#09;&#09;- 1990 U.S. cryptography export regulations<br/>
+&#09;<br/>
+&#09;- weak keys could be forced during the ssl handshake<br/>
+&#09;<ul><li style="list-style-type: none">- modern systems can easily brute force the small keys</li>
+</ul>
+<br/>
+&#09;- vulnerability was eventually patched<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Replay Attacks</span><br/>
+- <u>some cryptographic algorithms are more susceptible than others to a replay attack</u><br/>
+&#09;- <u>a hash with no salt, no session ID tracking, no encryption</u><br/>
+<br/>
+- <u>replay countermeasure may be part of the cryptography</u><br/>
+&#09;- kerberos and kerberos derivatives include time stamps<br/>
+&#09;- anything after the time to live (TTL) is discarded<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Hybrid Attack</span><br/>
+- <u>a combination of both a dictionary attack and a brute force attack</u><br/>
+</body></html>

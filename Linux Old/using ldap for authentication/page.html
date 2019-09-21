@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Using LDAP for Authentication</title>
+</head><body><tt>Using LDAP for Authentication<br/>
+<br/>
+- setting up LDAP Authentication for a Centos 7 server<br/>
+<br/>
+- uses the authconfig tool to allow us to authenticate using LDAP users<br/>
+<br/>
+<br/>
+Learning Objectives<br/>
+- set the server up to authenticate using _ldap.linuxacademy.com_<br/>
+- get the uid of 'ldapuser3'<br/>
+<br/>
+<br/>
+- sudo -i<br/>
+&#09;- we will need to be root<br/>
+<br/>
+- install the necessary packages<ul><li style="list-style-type: none">- yum install nss-pam-ldapd pam_krb5 autofs nfs-utils openldap-clients</li>
+</ul>
+<br/>
+- run<br/>
+&nbsp; &nbsp; - [root@host]# authconfig --enableldap --enableldapauth --enablemkhomedir --enableldaptls \ --ldaploadcacert=http://ldap.linuxacademy.com/pub/cert.pem --ldapserver=ldap.linuxacademy.com \ --ldapbasedn="dc=linuxacademy,dc=com" --update<br/>
+<br/>
+&#09;- we could also install authconfig-gtk and then run the export as root to make the same settings<br/>
+&#09;&#09;- [root@host]# export XAUTHORITY=/home/cloud_user/.Xauthority <br/>
+&#09;&#09;- [root@host]# yum install authconfig-gtk<br/>
+&#09;&#09;- [root@host]# authconfig-gtk<br/>
+<br/>
+- you will need to use ssh- X to connect in order to use authconfig-gtk<br/>
+<br/>
+- once authentication is complete we can run:<br/>
+&#09;- id ldapuser3</tt></body></html>

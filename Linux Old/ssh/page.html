@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SSH</title>
+</head><body>- secure shell<br/>
+<br/>
+- opens a shell on another system in &nbsp;a secure, encrypted manner<br/>
+- replaced telnet<br/>
+<br/>
+- l: used to specify an alternate username<br/>
+&#09;- can also be done with: ssh user@hostname<br/>
+<br/>
+- i filename: used for specifying what private key is used to authenticate this connection<br/>
+<br/>
+- F: used for specifying what config file to use<br/>
+&#09;- default: ~/.ssh/config<br/>
+&#09;- this is a per user config file<br/>
+<br/>
+<br/>
+SSH Private Keys<br/>
+- ssh connections can be made without sending a password to be authenticaed<br/>
+&#09;- this is done with key pairs<br/>
+&#09;<br/>
+&#09;- ssh-keygen: generates ssh keys<br/>
+&#09;- ssh-copy-id: copies the public key over to the target server<ul><li style="list-style-type: none">- ssh user@ip/hostname: connects to remote machine</li>
+</ul>
+<br/>
+<br/>
+X11 Forwarding<br/>
+- allows youto tunnel gui programs over an ssh connection<ul><li style="list-style-type: none">- connection will be displayed on local machine</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- ssh -X user@server</li>
+<li style="list-style-type: none"></li>
+</ul>
+<br/>
+Other SSH Commands<br/>
+- scp<br/>
+&#09;- file copying utility<br/>
+&#09;- replaced with scp<br/>
+<br/>
+- sftp<br/>
+&#09;- many sftp clients can connect to an ssh server<br/>
+<br/>
+</body></html>

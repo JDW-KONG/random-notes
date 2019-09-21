@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pass the Hash Attack</title>
+</head><body><span style="background-color: #00007f">Pass the Hash Attack</span><br/>
+<br/>
+- <u>attacker first obtains the hashes from a targeted system that is using an NT Lan Manager (NTLM) using any number of hash dumping tools</u><br/>
+<br/>
+- <u>a pass the hash tool is then used to place the obtained hashes on a local security authority subsystem service</u><br/>
+<br/>
+- a windows based authentication system believes that the attacker is a legit user<br/>
+&#09;- <u>windows automatically provides the required login credentials</u><br/>
+<br/>
+- can all be accomplished withoout the original password<br/>
+&#09;- <u>account lockout cannot be enforced because this attack is operating on a lower layer</u><br/>
+<br/>
+- <u>you must disable NTLM or enable kerberos to prevent the pass the hash attack</u></body></html>

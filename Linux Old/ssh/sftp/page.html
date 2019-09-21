@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SFTP</title>
+</head><body>https://www.digitalocean.com/community/tutorials/how-to-use-sftp-to-securely-transfer-files-with-a-remote-server<br/>
+<br/>
+- if you can connect via ssh, you can manage files with SFTP<br/>
+<br/>
+- sftp user@server<ul><li style="list-style-type: none">- establishes ssh session and opens sftp connection</li>
+<li style="list-style-type: none">- your prompt qill change to a SFTP prompt after connection</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- sftp -o Port=custom_port user@server</li>
+</ul>
+<ul><li style="list-style-type: none">- navigate using a limited set of nix commands</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- lpwd: prints local present working directory</li>
+<li style="list-style-type: none">- lls: lists contents of current directory on local machine</li>
+<li style="list-style-type: none">- lcd: changes directory on local machine</li>
+</ul>
+</li>
+<li style="list-style-type: none"></li>
+</ul>
+<br/>
+Transferring remote files to the Local System<br/>
+- downloading files from the remote host<ul><li style="list-style-type: none">- get [file]</li>
+<li style="list-style-type: none"></li>
+</ul>
+- copy remote to different name<ul><li style="list-style-type: none">- get [remote file] [name of new file]</li>
+</ul>
+<br/>
+- copy a directory and all of its contents<br/>
+&#09;- get -r [directory]<br/>
+<br/>
+- copy directory and maintain the appropriate permissions and access times<br/>
+&#09;- get -Pr [directory]<br/>
+<br/>
+<br/>
+Transferring local files to remote system<br/>
+- put [file]<br/>
+<br/>
+- copy a directory<br/>
+&#09;- put -r [file]<br/>
+<br/>
+<br/>
+- df -h: checks to see if you have enough space to complete the transfers<br/>
+<br/>
+- !: drops us into a local shell<ul><li style="list-style-type: none">- allows us to run any command on the local system</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- exit: returns to sftp session</li>
+</ul>
+<br/>
+<br/>
+Simple file manipulations<br/>
+- allows us to perform basic file maintenance<br/>
+<br/>
+- change the owner of a file on the remote system<br/>
+&#09;- chown [user id] file<br/>
+&#09;- does not accept usernames, uses UIDs<ul><li style="list-style-type: none"><ul><li style="list-style-type: none">- finding the UID</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- get /etc/passwd</li>
+<li style="list-style-type: none">- !less passwd</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- the UID will be in the third column of the file </li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+- change the group owner of a file<br/>
+&#09;- chgrp [group id] file<ul><li style="list-style-type: none">- listing the remote system's groups</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- get /etc/group</li>
+<li style="list-style-type: none">- !less group</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- the third column holds the group id</li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+- creates directory<br/>
+&#09;- local machine: lmkdir [directory]<br/>
+&#09;- remote machine: mkdir [directory]<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+- the chmod command works as expected on the remote file system<br/>
+&#09;- chmod 777 [file]<br/>
+<br/>
+- sets the local umask to give all files transferred over the appropriate permissions<ul><li style="list-style-type: none">- lumask 022</li>
+<li style="list-style-type: none"></li>
+</ul>
+- the following target only the remote filesystem<ul><li style="list-style-type: none">- ln</li>
+<li style="list-style-type: none">- rm</li>
+<li style="list-style-type: none">- rmdir</li>
+<li style="list-style-type: none"></li>
+</ul>
+- to close the connection<ul><li style="list-style-type: none">- exit</li>
+<li style="list-style-type: none">- bye</li>
+</ul>
+<br/>
+<br/>
+<br/>
+<ul><li style="list-style-type: none"></li>
+</ul>
+<br/>
+<br/>
+</body></html>

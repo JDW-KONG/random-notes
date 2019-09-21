@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Using SSH, Redirection, and Permissions in Linux</title>
+</head><body>- set up a new server for a dev to use<br/>
+- needs to be able to connect via ssh without password<br/>
+<br/>
+- copy tar files from one server to another<br/>
+&#09;- send all output from the extraction to /home/dev/tar-output.log<br/>
+<br/>
+- make sure new files have to correct permissions<br/>
+<br/>
+- verify permissions on a script<br/>
+<br/>
+<br/>
+- enable SSH to connect without password<br/>
+&#09;- generate ssh keys<br/>
+&#09;&#09;- ssh-keygen<br/>
+<br/>
+&#09;- copy ssh keys to remote server<br/>
+&#09;&#09;- ssh-copy-id [remote server ip]<br/>
+<br/>
+&#09;- log in to remote server<br/>
+&#09;&#09;- ssh [username]@[remote server ip]<br/>
+<br/>
+- copy all tar files from local server to remote server<br/>
+&#09;- use scp to copy files<br/>
+&#09;&#09;- scp [filename] [remote server ip]<br/>
+<br/>
+&#09;- connect to remote server<br/>
+&#09;&#09;- ssh [username]@[remote server ip]<br/>
+<br/>
+&#09;- verify that files have transferred successfully<br/>
+&#09;&#09;- ll<br/>
+<br/>
+- extract files making sure output is redirected<br/>
+&#09;- tar -xvf [filename] &gt;&gt; [output file].log<br/>
+<br/>
+- set umask so that new files are only readable and writable by owner<br/>
+&#09;- umask 066<br/>
+<br/>
+- verify that script is executable and run it<br/>
+&#09;- check permissions on file<br/>
+&#09;&#09;- ls -l deploy.sh<br/>
+<br/>
+&#09;- add execute bit<br/>
+&#09;&#09;- chmod +x deploy.sh<br/>
+<br/>
+&#09;- run the file<br/>
+&#09;&#09;- ./deploy.sh</body></html>

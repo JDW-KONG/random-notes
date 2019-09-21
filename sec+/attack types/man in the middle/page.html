@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Man in the Middle</title>
+</head><body><span style="background-color: #00007f">Man in the Middle Attacks</span><br/>
+- <u>attacker intercepts traffic going between two hosts and then changes the information in the packets in real time</u><br/>
+&#09;- the man in the middle can inject false information between hosts<br/>
+<br/>
+- How can a bad guy watch you without knowing?<br/>
+&#09;- man in the middle attacks<br/>
+&#09;- sits between target and destination<br/>
+<br/>
+- redirects your traffic<br/>
+&#09;- then passes it on the the destination<br/>
+&#09;- you never know that your traffic was redirected<br/>
+<br/>
+- <u>ARP poisoning</u><br/>
+&#09;- <u>ARP has no security</u><br/>
+&#09;- operates at layer 2 of the OSI reference model<br/>
+&#09;- uses MAC addresses<br/>
+&#09;- must be done locally<br/>
+<br/>
+&#09;- <u>an attacker sends spoofed ARP messages to a local area network</u><br/>
+&#09;&#09;- may allow an attacker to:<br/>
+&#09;&#09;&#09;- intercept data frames on a network<br/>
+&#09;&#09;&#09;- modify traffic<br/>
+&#09;&#09;&#09;- stop all traffic<br/>
+<ul><li style="list-style-type: none">- can be prevented by using IPSec tunnels across your internal network</li>
+</ul>
+&#09;<br/>
+<br/>
+<span style="background-color: #00007f">Man in the Browser</span><br/>
+- <u>a trojan is used to intercept and manipulate calls between the main application's executable (the browser) and its security mechanisms</u><br/>
+<br/>
+- <u>the most common objective of this attack is to commit financial fraud by manipulating the transactions of internet banking systems</u><br/>
+<br/>
+- <u>kerberos prevents replay attacks, as it uses updated sequence numbers and timestamps</u><br/>
+<br/>
+- What if the middleman was on the same computer as the victim?<br/>
+&#09;- the calls are coming from inside the browser<br/>
+&#09;- malware/trojan does all of the proxy work<br/>
+<br/>
+- huge advantage to the bad guys<br/>
+&#09;- relatively easy to proxy encrypted traffic<br/>
+&#09;- everything looks normal to the victim<br/>
+<br/>
+- the man in the browser waits for you to log into your bank<br/>
+&#09;- and the cleans you out<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Padding Oracle On Downgraded Legacy Encryption</span><br/>
+- POODLE attack<br/>
+<br/>
+- <u>exploits the use of SSL 3.0 on legacy systems</u><br/>
+<br/>
+- <u>a downgrade attack is when you abandon a higher level of security for an older, low-level security system</u><br/>
+<br/>
+<br/>
+</body></html>

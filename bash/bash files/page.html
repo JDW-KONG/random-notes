@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Bash Files</title>
+</head><body><tt><span style="background-color: #007f00">.bash_profile or .profile</span><br/>
+- designed to execute scripts when you log in<ul><li style="list-style-type: none">- when entering username and password</li>
+</ul>
+- runs exports and aliases as part of the login process<ul><li style="list-style-type: none">- runs these programs as if you had opened a new terminal</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- can be executed manually to apply updated settings</li>
+<li style="list-style-type: none"></li>
+</ul>
+- typically includes .bashrc<ul><li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+</ul>
+<span style="background-color: #007f00">.bashrc</span><br/>
+- executed before the command prompt loads<br/>
+&#09;- or when bash is typed into the shell<br/>
+- can set the path here<br/>
+<br/>
+<br/>
+<span style="background-color: #007f00">.bash_history</span><br/>
+- the history of what you have typed into a shell <br/>
+</tt><br/>
+<br/>
+<span style="background-color: #007f00"><tt>.bash_logout<br/>
+</tt></span><tt>- the last thing executed when you enter the exit command or logout<br/>
+<br/>
+<br/>
+<span style="background-color: #007f00">what makes a file a shell script?<br/>
+</span>- contains commands<span style="background-color: #007f00"><br/>
+</span><span style="background-color: #007f00"><br/>
+</span>- defined by the fact that it starts a shell and executes commands within that shell<br/>
+<br/>
+- file starts with #!/bin/bash<br/>
+<br/>
+- file does not need an extension<br/>
+<br/>
+<br/>
+<span style="background-color: #007f00">displaying environment variables in a script<br/>
+</span>- use a dollar sign and the environment variable name<ul><li style="list-style-type: none">- $HOME</li>
+<li style="list-style-type: none"></li>
+</ul>
+<br/>
+<span style="background-color: #007f00">using variables on the command line<br/>
+</span>- FIRSTNAME="Dogma"<br/>
+- export FIRSTNAME<br/>
+- echo "Your first name is: $FIRSTNAME"<br/>
+<br/>
+- export SEARCHSITE="https://www.google.com"<br/>
+- export SEARCHSITE="http://www.bing.com"<br/>
+&#09;- updates the variables value<br/>
+<br/>
+<br/>
+<span style="background-color: #007f00">setting and using variables in scripts<br/>
+</span>- VARIABLE="value"<br/>
+<br/>
+<br/>
+<span style="background-color: #007f00">comment types and structures<br/>
+</span>- precede comments with a #<br/>
+&#09;- # this is a comment<br/>
+<br/>
+<br/>
+<span style="background-color: #007f00">command substitution<br/>
+</span>- use backticks around commands<span style="background-color: #007f00"><br/>
+</span><br/>
+<br/>
+<span style="background-color: #007f00">exit status<br/>
+</span>- $?<span style="background-color: #007f00"><br/>
+</span>- two primary statuses:<ul><li style="list-style-type: none">- 0: ok</li>
+<li style="list-style-type: none">- ANYTHING ELSE: an error has occurred'</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">- set -e: exits on error</li>
+<li style="list-style-type: none"></li>
+</ul>
+- helps us prevent unintended consequences<br/>
+<ul><li style="list-style-type: none"></li>
+</ul>
+<span style="background-color: #007f00">arithmetic operations</span><ul><li style="list-style-type: none"></li>
+</ul>
+- expr<ul><li style="list-style-type: none">- evaluates expressions</li>
+<li style="list-style-type: none">- include spaces between operator</li>
+<li style="list-style-type: none">- escape illegal chars with \</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+</ul>
+<span style="background-color: #007f00">global and local environment variables<br/>
+</span>- printenv<br/>
+- env<ul><li style="list-style-type: none">- env | grep thing</li>
+<li style="list-style-type: none"></li>
+</ul>
+<br/>
+<span style="background-color: #007f00">special characters<br/>
+</span>- escape chars with \<br/>
+- single quotes print literally, no variable conversion<br/>
+- `command` executes command and returns output to string<br/>
+<br/>
+<br/>
+<span style="background-color: #007f00">using /dev/null<br/>
+</span>- actually a device<br/>
+- considered the black hole of your system<br/>
+- anything sent there vanishes<span style="background-color: #007f00"><br/>
+</span>- &gt;&gt; /dev/null<span style="background-color: #007f00"><br/>
+</span><br/>
+<br/>
+<span style="background-color: #007f00">the read statement<br/>
+</span>- allows us to capture info from users<br/>
+- read VARIABLENAME<br/>
+<span style="background-color: #007f00"><br/>
+<br/>
+shell expansion<br/>
+</span>- the ability to use shortcuts<br/>
+- use ~ to represent home directory<br/>
+<br/>
+- declaring a variable and exporting<br/>
+&#09;- echo "${VARNAME:=value}"<br/>
+<br/>
+<br/>
+<span style="background-color: #007f00">types of variables<br/>
+</span>- the declare keyword - explicit variables<br/>
+- declare -p MYVAR<br/>
+&#09;- checks variable info<br/>
+- declare a variable a specific type<br/>
+&#09;- declare -i NEWVAR=10<br/>
+&#09;&#09;- marks this variable as an integer<br/>
+- declare +i NEWVAR<br/>
+&#09;- changes variable type to all<br/>
+<br/>
+- declare -r READONLY<br/>
+&#09;- creates a readonly variable<br/>
+<br/>
+- readonly MYREADONLY="This string"<br/>
+&#09;- alternate way of creating readonly variable<br/>
+<br/>
+<br/>
+<span style="background-color: #007f00">arrays<br/>
+</span>- an indexed list<br/>
+- MYARRAY=("First" "Second" "Third")<br/>
+<br/>
+- echoing an array will only print the first value<br/>
+<br/>
+- SELECTING AN ITEM FROM AN ARRAY<ul><li style="list-style-type: none">- ${MYARRAY[0]}</li>
+<li style="list-style-type: none">- ${MYARRAY[*]}</li>
+<li style="list-style-type: none"></li>
+</ul>
+- ADDING TO AN ARRAY<br/>
+&#09;- MYARRAY[3]="Fourth"<br/>
+<br/>
+- SELECTING ALL ITEMS FROM AN ARRAY<br/>
+&#09;-${MYARRAY[@]}<br/>
+&#09;<br/>
+<br/>
+<br/>
+<span style="background-color: #007f00"><br/>
+</span></tt></body></html>

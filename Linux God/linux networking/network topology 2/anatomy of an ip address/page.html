@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Anatomy of An IP Address</title>
+</head><body><tt>Anatomy of an IP Address<br/>
+<br/>
+- ip address: the adress of a device on it's network<br/>
+&#09;- like a house number on a street<br/>
+<br/>
+-192.168.101.100<br/>
+- 32bit address<br/>
+- broken into 4 8bit octets<br/>
+- each octet is a 8 digit binary number<br/>
+- octets can range from 0 - 255<br/>
+<br/>
+IPv6 Example<br/>
+- a lot longer than IPv4<br/>
+- hexadecimal<br/>
+- 128bit address<br/>
+- 8 16bit sections<br/>
+- addresses can be compressed by 0's<br/>
+<br/>
+<br/>
+IPv4 Classful Networking<br/>
+- Class A: 0.0.0.0. to 127.255.255.255<br/>
+&#09;- first bit is always 0<br/>
+<br/>
+- Class B: 128.0.0.0 to 191.255.255.255<br/>
+&#09;- has a 1 in the first bit and a 0 in the second<br/>
+<br/>
+- Class C: 192.0.0.0 to 223.255.255.255<br/>
+&#09;- one for the first two bits, 0 for the third<br/>
+<br/>
+[ Classes A - C use a portion of the 32bit address to accomodate different network sizes ]<br/>
+<br/>
+- Class D: 224.0.0.0 to 239.255.255.255<br/>
+&#09;- ones in the first three bits, 0 in the fourth<br/>
+&#09;- reserved for multicast<br/>
+<br/>
+- Class E: 240.0.0.0 to 255.255.255.255<br/>
+&#09;- first four bits are all ones<br/>
+&#09;- reserved for experimental use<br/>
+<br/>
+<br/>
+Classes and Subnets<br/>
+- Class A<br/>
+&#09;- uses the remainder of the first octet to define the network, the remaining 3 are hosts<br/>
+&#09;- 2,097,152 host IPs<br/>
+- Class B <br/>
+&#09;- uses the remainder of the first two octets to define the network, the remaining 2 are hosts<br/>
+&#09;- 65,534 host IPs<br/>
+- Class C<br/>
+&#09;- uses the first three octets for the network and the last one for the host<br/>
+&#09;- 254 host IPs<br/>
+<br/>
+<br/>
+Private Networks<br/>
+- Class A: 10.0.0.0 to 10.255.255.255<br/>
+- Class B: 172.16.0.0 to 172.31.255.255<br/>
+- Class C: 192.168.0.0 to 192.168.255.255<br/>
+<br/>
+<br/>
+Reserved for Loopback<br/>
+- 127.0.0.0 - 127.255.255.255<br/>
+<br/>
+IPv6 Subnet<br/>
+- 1013:18bc:0000:0000:0000:00ff:99ad:313d<br/>
+&#09;- first half is network, second half is node<br/>
+&#09;- first three sections are global<br/>
+&#09;- fourth section is internal<br/>
+<br/>
+- global unicast: Internet scope - routed on internet - 2001:<br/>
+- unique local: Internal network scop - not routed on internet<br/>
+- link local: Network link scope - not routed on internet FE80;<br/>
+<br/>
+<br/>
+Network Address Translation<br/>
+- a method of remapping on IP address space into another by modifying address information<br/>
+&#09;- info is modified in the IP header of the packets while they are in transit across a traffic routing device<br/>
+<br/>
+- maps external traffic to internal ip address<br/>
+<br/>
+<br/>
+Conclusion<br/>
+- ip addresses are necessary for Layer 3 addressing on the network<br/>
+- an IPv4 address is a 32bit number separated into 4 8bit octets by periods<br/>
+- an IPv6 address is a 128bit number separated into 8 16bit sections by colons<br/>
+- a subnet is a subsection of the network and determines the IP range and size<br/>
+- a classful network uses a portion of the IP address as the network address<br/>
+- CIDR permits more flexibility in network size over the traditional classful design<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</tt><br/>
+<br/>
+<br/>
+</body></html>

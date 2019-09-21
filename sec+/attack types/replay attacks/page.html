@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Replay Attacks</title>
+</head><body><span style="background-color: #00007f">Replay Attack<br/>
+</span>-<u>a man in the middle attack that intercepts data but replays it at a later date</u><br/>
+&#09;- <u>kerberos, a microsoft authentication protocol can prevent this as each entry has updated sequence numbers and timestamps</u><br/>
+&#09;&#09;- <u>expects data in a certain sequence and rejects the data if it is out of order</u><span style="background-color: #00007f"><br/>
+</span><br/>
+- useful information is transmitted over the network<br/>
+&#09;- a crafty hacker will take advantage of this<br/>
+<br/>
+- need access to the raw network data<br/>
+&#09;- <u>network tap, arp poisoning, malware on victim computer</u><br/>
+<br/>
+- the gathered information may help the bad guy<br/>
+&#09;- replay the data to appear as someone else<br/>
+<br/>
+- this is not a man in the middle attack<br/>
+&#09;- the actual replay doesn't require the original workstation<br/>
+<br/>
+- legitimate user send auth request to server<br/>
+&#09;- bad guy also receives a copy of this data<br/>
+&#09;&#09;- bad guy later replays data captured from user to access user's account<br/>
+<br/>
+&#09;- <u>avoid this type of replay attack with a salt or encryption</u><br/>
+&#09;&#09;- <u>use a session ID with the password hash to create a unique authentication hash each time</u><br/>
+<br/>
+<br/>
+<br/>
+</body></html>

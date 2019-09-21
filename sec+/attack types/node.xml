@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>expanded</key><true/>
+  <key>nodeid</key><string>69bab1cb-b9d8-42ef-b8ad-f5d281aeaea0</string>
+  <key>modified_time</key><integer>1563240201</integer>
+  <key>expanded2</key><true/>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1563240201</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>title</key><string>Attack Types</string>
+  <key>version</key><integer>6</integer>
+  <key>order</key><integer>1</integer>
+  <key>info_sort</key><string>created_time</string>
+</dict>
+</node>

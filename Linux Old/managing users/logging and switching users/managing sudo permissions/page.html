@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Managing Sudo Permissions</title>
+</head><body>- give a user account permssion to use sudo<br/>
+<br/>
+- create a new user<br/>
+&#09;- sudo adduser [username]<ul><li style="list-style-type: none">- set password</li>
+</ul>
+<ul><li style="list-style-type: none">- if current user is not in the sudoers file</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- switch to root user</li>
+</ul>
+</li>
+<li style="list-style-type: none">&#09;&#09;- su</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- add the new user</li>
+</ul>
+</li>
+<li style="list-style-type: none">&#09;&#09;- adduser [username]</li>
+<li style="list-style-type: none">&#09;</li>
+<li style="list-style-type: none">&#09;- set password</li>
+<li style="list-style-type: none">&#09;&#09;- passwd [username]</li>
+<li style="list-style-type: none"></li>
+</ul>
+<br/>
+- edit sudoers file<br/>
+&#09;- sudo visudo<br/>
+&#09;- add user under privilege specification section<br/>
+&#09;&#09;- [username] ALL=(ALL:ALL) ALL<br/>
+<br/>
+</body></html>

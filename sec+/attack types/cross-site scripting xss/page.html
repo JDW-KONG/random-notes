@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cross-site Scripting XSS</title>
+</head><body><span style="background-color: #00007f">Cross-site Scripting</span><br/>
+- XSS<br/>
+&#09;- cascading style sheets is something else entirely<br/>
+<br/>
+- <u>originally called cross-site because of browser security flaws</u><br/>
+&#09;- <u>information from one site could be shared with another</u><br/>
+<br/>
+- one of the most common web application development errors<br/>
+&#09;- takes advantage of the trust a user has for a site<br/>
+&#09;- complex and varied<br/>
+<br/>
+- malware that uses javascript<br/>
+<br/>
+- <u>when a user injects malicious code into another user's browser</u><br/>
+&#09;- uses both HTML tags and javascript<br/>
+&#09;- <u>when the user loads the page into the browser it will launch the JS</u><br/>
+<ul><li style="list-style-type: none">- <u>can be identified by looking for the var command and for a variable with the html tags &lt;script&gt; and &lt;/script&gt;</u></li>
+<li style="list-style-type: none">- scripts with var are very likely to be Javascript</li>
+</ul>
+<br/>
+<br/>
+<span style="background-color: #00007f">Non-persistent (reflected) XSS attack</span><br/>
+- <u>website allows scripts to run in user input</u><br/>
+&#09;- search box is a common choice<br/>
+<br/>
+- bad guy emails a link that takes advantage of this vulnerability<br/>
+&#09;- <u>runs a script that sends credentials/session IDs/cookies to the bad guy</u><br/>
+<br/>
+- <u>script embedded in URL executes in victim's browser</u><br/>
+&#09;- as if it came from the server<br/>
+<br/>
+- bad guys use credentials/session IDs/cookies to steal victim's information without their knowledge<br/>
+&#09;- very sneaky<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Persistent (stored) XSS attack</span><br/>
+- <u>bad guy posts a message to social network</u><br/>
+&#09;- <u>includes the malicious payload</u><br/>
+<br/>
+- its now persistent<br/>
+&#09;- <u>everyone gets the payload</u><br/>
+<br/>
+- <u>no specific target</u><br/>
+&#09;- affects all viewers of the page<br/>
+<br/>
+- for social networking, this can spread quickly<ul><li style="list-style-type: none">- <u>everyone who views the message can have it posted to their page</u></li>
+<li style="list-style-type: none">&#09;- where someone else can view it and propogate further</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+</ul>
+<span style="background-color: #00007f">Protecting against XSS</span><br/>
+- <u>be careful when clicking untrusted links</u><br/>
+<br/>
+- <u>consider disabling javascript</u><br/>
+&#09;- or control with an extension<br/>
+<br/>
+- keep your browser and applications updated<br/>
+<br/>
+- validate input<br/>
+<ul><li style="list-style-type: none"></li>
+<li style="list-style-type: none"></li>
+</ul>
+</body></html>

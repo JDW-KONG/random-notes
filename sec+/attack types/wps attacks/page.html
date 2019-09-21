@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WPS Attacks</title>
+</head><body><span style="background-color: #00007f">WPS Attacks</span><br/>
+<br/>
+<span style="background-color: #00007f">Using WPS</span><br/>
+- <u>wifi protected setup</u><br/>
+&#09;- originally called wifi simple config<br/>
+<br/>
+- allows easy setup of a mobile device<br/>
+&#09;- a passphrase can be complicated to a novice<br/>
+<br/>
+- different ways to connect to a WPS AP<br/>
+&#09;- <u>the pin configured on the access point myst be entered on the mobile device</u><br/>
+&#09;- <u>or push a button on the access point</u><br/>
+&#09;- <u>near field communication: bring the mobile device close to the access point</u><br/>
+&#09;- the usb method is no longer used<br/>
+<br/>
+- WPS attack<br/>
+&#09;- <u>WPS is where a password is already stored and to connect to the wireless network you simply push the button</u><br/>
+&#09;- <u>susceptible to brute force attacks</u><br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">The WPS Hack</span><br/>
+- December 2011: WPS design flaw is discovered<br/>
+- <u>PIN is really an eight digit number</u><br/>
+&#09;- seven digits and a checksum<br/>
+&#09;- seven digits with 10,000,000 possible combinations<br/>
+<br/>
+- the WPS process validates half of the pin<br/>
+&#09;- first half, 4 digits, second half, 3 digits<ul><li style="list-style-type: none">- first half: 10,000 possiblities, seconds half 1000 possiblities</li>
+<li style="list-style-type: none"></li>
+</ul>
+- used to take about four hours to go through all of them<br/>
+&#09;- lockout and slowdown functions have now been implemented<br/>
+&#09;- now takes at least 1 -7 days<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Other WPS Attacks</span><br/>
+- walk up to the access point<br/>
+&#09;- default pin may be written on the device<br/>
+&#09;- or just push the WPS button on the front<br/>
+<br/>
+- pixie dust - summer 2014<br/>
+&#09;- the WPS pin may be poorly encrypted<br/>
+&#09;&#09;- this is based on the wireless chipset<br/>
+&#09;- an offline WPS brute force<br/>
+&#09;- this attack takes 20 minutes or less<br/>
+&#09;&#09;- circumvents slowdown and lockouts<br/>
+<br/>
+- WPS is just awful<br/>
+&#09;- make sure it is disabled<br/>
+</body></html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Firewalls</title>
+</head><body>- ufw is an interface for iptables<br/>
+&#09;- apt-get install ufw<br/>
+&#09;&#09;- ufw allow 22/tcp<br/>
+&#09;&#09;- ufw deny 80/tcp<br/>
+&#09;&#09;- ufw deny 2000:3000/tcp<br/>
+&#09;&#09;- ufw allow from 192.168.1.1 to any port 443 proto tcp<br/>
+&#09;- ufw enable<br/>
+&#09;- ufw status<br/>
+&#09;- ufw logging enabled<br/>
+&#09;- ufw status verbose<br/>
+&#09;- ufw status numbered<br/>
+&#09;&#09;- ufw delete [rule number]<br/>
+&#09;- ufw deny in on eth0 from 192.168.1.1/24<br/>
+&#09;- ufw reset<br/>
+&#09;&#09;- resets rules<br/>
+&#09;</body></html>

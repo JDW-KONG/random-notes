@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Driver Manipulation</title>
+</head><body><span style="background-color: #00007f">Driver Manipulation</span><br/>
+<br/>
+<span style="background-color: #00007f">Malware Hide and Go Seek</span><br/>
+- traditional antivirus is very good at identifying known attacks<br/>
+&#09;- checks the signature<br/>
+&#09;- block anything that matches<br/>
+<br/>
+- there are still ways to infect and hide<br/>
+&#09;- its a constant war<br/>
+&#09;- new zero-days are constantly being discovered<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Your Drivers are Powerful</span><br/>
+- <u>the interaction between the hardware and your operating system</u><br/>
+&#09;- they are often trusted<br/>
+&#09;- great opportunity for security issues<br/>
+<br/>
+<br/>
+- May 2016 - HP Audio Drivers<br/>
+&#09;- conexant audio chips<br/>
+&#09;- driver installation includes audio control software<br/>
+&#09;- debugging feature enables a keylogger<br/>
+<br/>
+<br/>
+- hardware interactions contain sensitive information<br/>
+&#09;- mousse, keyboard, camera, microphone<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Shimming</span><br/>
+- <u>a shim is a small library that transparently intercepts API calls and changes the arguments passed</u><ul><li style="list-style-type: none">- <u>can also be used to run programs on different software platforms than they were developed for</u></li>
+<li style="list-style-type: none">- <u>normally used to help third party software applications work with an operating system</u></li>
+</ul>
+<br/>
+- filling the space between two objects<br/>
+&#09;- the middleman<br/>
+<br/>
+- Windows includes its own shim<br/>
+&#09;- backwards compatibility with previous windows versions<br/>
+&#09;- application compatibility shim cache<br/>
+<br/>
+- <u>malware authors write their own shims</u><br/>
+&#09;- get around security like UAC<br/>
+<br/>
+<br/>
+<span style="background-color: #00007f">Refactoring<br/>
+</span>- <u>the process of changing a computer program's internal structure without modifying its external functional behavior or existing functionality</u><span style="background-color: #00007f"><br/>
+</span><br/>
+- metamorphic malware<br/>
+&#09;- a different program is downloaded each time<br/>
+<br/>
+- makes it appear different each time<br/>
+&#09;- add NOP instructions<br/>
+&#09;- loops, pointless code strings<br/>
+<br/>
+- <u>can intelligently redesign itself</u><br/>
+&#09;- reorder functions<br/>
+&#09;- modify the application flow<br/>
+&#09;- reorder code and insert unused data types<br/>
+<br/>
+- difficult to match with signature based detection<br/>
+&#09;- use a layered approach<ul><li style="list-style-type: none"></li>
+</ul>
+</body></html>

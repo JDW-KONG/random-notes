@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Buffer Overflows</title>
+</head><body><span style="background-color: #00007f">Buffer Overflows<br/>
+</span>- <u>occurs when a program tries to store more data than it can hold in a temporary memory storage area<br/>
+</u><u><br/>
+</u>- <u>writing outside the allocated memory into the adjacent memory can</u>:<br/>
+&#09;- <u>corrupt the data</u><br/>
+&#09;- <u>crash the program</u><br/>
+&#09;- <u>cause the execution of malicious code</u><br/>
+<br/>
+- overwriting a buffer of memory<br/>
+&#09;- data spills over into other memory areas<br/>
+<br/>
+- developers need to perform bounds checking<br/>
+&#09;- attackers spend a lot of time looking for openings<br/>
+<br/>
+- not a simple exploit<br/>
+&#09;- takes time to avoid crashing things<br/>
+&#09;- takes time to make it do what you want<br/>
+<br/>
+- a really useful buffer overflow is repeatable<br/>
+&#09;- which means that all systems are pwned<br/>
+<br/>
+<br/>
+Integer Overflow<br/>
+- <u>occurs when the result of an arithmetic operation exceeds the maximum size of the integer type used to store it</u><br/>
+&#09;- similar to a buffer overflow but uses numerical values</body></html>

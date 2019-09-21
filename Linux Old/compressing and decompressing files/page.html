@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Compressing and Decompressing Files</title>
+</head><body>- compression<br/>
+&#09;- encoding info in fewer bits than the original info<br/>
+<br/>
+&#09;- two main commands: gzip and bzip<ul><li style="list-style-type: none">&#09;- gzip</li>
+<li style="list-style-type: none">&#09;&#09;- gzip bigfile.stuff</li>
+<li style="list-style-type: none">&#09;&#09;- gzip -d bigfile.stuff.gz</li>
+<li style="list-style-type: none">&#09;&#09;&#09;- gunzip [file] can also be used to decompress files</li>
+<li style="list-style-type: none"></li>
+<li style="list-style-type: none">&#09;- bzip2</li>
+<li style="list-style-type: none">&#09;&#09;- bzip2 bigfile.stuff</li>
+<li style="list-style-type: none">&#09;&#09;- bzip2 -d bigfile.stuff.bz2</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none">- bunzip [file] can also be used to decompress files</li>
+<li style="list-style-type: none"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+- compressing an archive<br/>
+&#09;- compressing an archive upon creation<br/>
+&#09;&#09;- tar czvf home.tar.gz /[directory]<br/>
+&#09;&#09;- tar cvjf home.tar.bz2 /home<br/>
+<br/>
+&#09;- extracting an archive<br/>
+&#09;&#09;- tar xzvf home.tar.gz /[directory]<br/>
+&#09;&#09;- tar xvjf home.tar.bz2 /[directory]<br/>
+<br/>
+- zip files<br/>
+&#09;- can unzip windows files in linux<br/>
+&#09;- yum install zip<br/>
+&#09;<br/>
+&#09;- r: zips recursively<br/>
+&#09;<br/>
+&#09;- zip -r [archive name] [archive]<br/>
+&#09;- unzip [archive name]<br/>
+<br/>
+<br/>
+- archive<br/>
+&#09;- file that is a collection of a number of files/directories<br/>
+&#09;&#09;- can be sorted and managed more easily than individual components<br/>
+&#09;- archive backups<br/>
+<br/>
+&#09;- tar: tape archive<br/>
+&#09;&#09;- most common archive command<ul><li style="list-style-type: none"></li>
+<li style="list-style-type: none">- creating an archive:</li>
+</ul>
+&#09;&#09;- tar cvf home.tar /home<br/>
+&#09;&#09;&#09;- c: create an archive<br/>
+&#09;&#09;&#09;- v: verbose output<br/>
+&#09;&#09;&#09;- f: file name<br/>
+<br/>
+&#09;- extracting an archive:<br/>
+&#09;&#09;- tar xvf home.tar<br/>
+&#09;&#09;&#09;- x: extract an archive<br/>
+&#09;&#09;&#09;- v: verbose<br/>
+&#09;&#09;&#09;- f: filename</body></html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Logging and Switching Users</title>
+</head><body>- su<br/>
+&#09;- substitute user<br/>
+&#09;- allows us to substitute another user as your own<br/>
+<br/>
+&#09;- prompts for new user's password<br/>
+&#09;- places you in the new user's shell<br/>
+<br/>
+<br/>
+- .bashrc<br/>
+&#09;- applies to every shell you open<br/>
+<br/>
+- .bashprofile<br/>
+&#09;- applies to login shells<br/>
+&#09;- can create environment variables here<br/>
+&#09;- anything run on the command line can be run from here<br/>
+<br/>
+- user environments<br/>
+&#09;- a collection of directories files and settings that set up how things look when: a user logs in<br/>
+&#09;- can run commands<br/>
+&#09;- can give user access to different things<br/>
+<br/>
+&#09;- by defaul su retaubs the environment of the user who ran the command<br/>
+&#09;- use: su - [user] to inherit the new user's settings<br/>
+<br/>
+- .bash_logout<br/>
+&#09;- contains commands that will be run when the user logs out<br/>
+<br/>
+- .bash_history<br/>
+&#09;- contains a list of every command made on the server<br/>
+<br/>
+&#09;- history: prints command history<br/>
+&#09;- use ctrl + r to search through your command history<br/>
+<br/>
+<br/>
+Single Command<br/>
+- running a single command on a substitute user<br/>
+&#09;- su -c '[command]'<br/>
+<ul><li style="list-style-type: none">- sudo [command]</li>
+</ul>
+</body></html>

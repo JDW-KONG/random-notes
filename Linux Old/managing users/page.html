@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Managing Users</title>
+</head><body>- manage users and groups<br/>
+- new users need to be set up on a machine<br/>
+<br/>
+- add a user account for each user<br/>
+&#09;- add each user to a group<ul><li style="list-style-type: none">- add one user to a superuser group</li>
+</ul>
+<br/>
+- we will need to be logged in as root/sudo <br/>
+<br/>
+- add the users to the server<br/>
+&#09;- useradd [username]<br/>
+<br/>
+- create superuser group<br/>
+&#09;- groupadd [group name]<br/>
+<br/>
+- set superuser group as a user's main group<br/>
+&#09;- usermod -g [group name] [username]<br/>
+&#09;- use id [username] to check membership<br/>
+<br/>
+- add supplementary group for each user<br/>
+&#09;- usermod - aG [group name] [username]<br/>
+&#09;- use id [username] to check membership<br/>
+<br/>
+- locking an account<br/>
+&#09;- usermod -L [username]<br/>
+<br/>
+</body></html>
